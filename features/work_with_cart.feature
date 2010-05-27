@@ -33,6 +33,9 @@ Feature: Work with cart
     # Then I should see "Shopping Cart" within "h1"
     # And I should see "$17" within "#subtotal"
     
+    When I empty the cart
+    Then I should see "Your cart is empty"
+    
     
   Scenario: Following by cart link should not create order
     When I go to the homepage

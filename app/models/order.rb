@@ -304,6 +304,7 @@ class Order < ActiveRecord::Base
       self.over_paid
     end
 
+    self.checkout.enable_validation_group(:address)
     save!
   end
 

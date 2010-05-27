@@ -60,8 +60,10 @@ When /^I choose "(.*?)" as shipping method and "(.*?)" as payment method$/ do |s
   When %{I press "Place Order"}
 end
 
+When /^I empty the cart$/ do
+  When %{follow "Empty Cart"}
+end
+
 Then /^cart should be empty$/ do
   Then %{I should not see "Cart: ("}
 end
-
-
