@@ -1,3 +1,4 @@
+@culerity
 Feature: Work with cart
 
   Scenario: Visitor can work with cart
@@ -22,18 +23,19 @@ Feature: Work with cart
     And I should see "$47" within "#subtotal"
     
     When I fill in "order_line_items_attributes_0_quantity" with "3"
+    And I follow "Update"
     Then the "order_line_items_attributes_0_quantity" field should contain "3"
+    And I should not see "There were problems"
     # When I press "order_line_items_attributes_0_quantity"
     # Then I should see "Shopping Cart" within "h1"
     # And I should see "$45" within "#line_items td"
-    # And I should see "$62" within "#subtotal"
     
     # When I fill in "order_line_items_attributes_0_quantity" with "0"
     # And follow "Update"
     # Then I should see "Shopping Cart" within "h1"
     # And I should see "$17" within "#subtotal"
     
-    When I empty the cart
+    When I follow "Empty Cart"
     Then I should see "Your cart is empty"
     
     
